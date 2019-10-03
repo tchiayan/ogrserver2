@@ -32,11 +32,12 @@ def convert_mapinfo_geojson():
                 print detail
             temp_filebucket.append(temp_filename + ".geojson")
             status = "OK"
-        except:
+        except Exception, e:
             status = "ERROR"
             print "Error convert from mapinfo to geojson"
+            print str(e)
             detail = "Error convert from mapinfo to geojson"
-            
+
         for _file in temp_filebucket:
             os.remove(_file)
 
